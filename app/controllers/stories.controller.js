@@ -32,9 +32,9 @@ exports.getLengthEpisodesStory = (req, res) => {
 };
 
 exports.findEpisodesStory = (req, res) => {
-    let keyTitle = req.body.keyTitle
+    let keyTitle = req.query.keyTitle
 
-    if(keyTitle !== ""){
+    if(keyTitle !== ""){    
         Stories.aggregate([ 
             { $match: {key: keyTitle} }, 
             { $project: { episodes: 1 } }, 
@@ -132,8 +132,8 @@ exports.findReverseEpisodesStoryLimit = (req, res) => {
 };
 
 exports.findOneEpisodesStory = (req, res) => {
-    let keyTitle = req.body.keyTitle
-    let keyEpisodes = req.body.keyEpisodes
+    let keyTitle = req.query.keyTitle
+    let keyEpisodes = req.query.keyEpisodes
 
     Stories.aggregate([ 
         {$match: {key: keyTitle}}, 

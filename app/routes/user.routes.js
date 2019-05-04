@@ -8,7 +8,7 @@ module.exports = (app) => {
     app.post('/v1/mobile/user/storyfollow/add', user.addFollowStory);
 
     // Xoá truyện mà người dùng theo dõi
-    app.post('/v1/mobile/user/storyfollow/delete', user.deleteFollowStory);
+    app.delete('/v1/mobile/user/storyfollow/delete', user.deleteFollowStory);
 
     // Lấy truyện mà người dùng theo dõi
     app.post('/v1/mobile/user/storyfollow', user.getDataFollowStory);
@@ -17,7 +17,7 @@ module.exports = (app) => {
     app.post('/v1/mobile/user/storyfollow/check', user.checkStoryFollowStory);
 
     // Sắp xếp vị trí xem truyện mà người dùng theo dõi
-    app.post('/v1/mobile/user/storyfollow/index', user.sortIndexViewFollowStory);
+    app.put('/v1/mobile/user/storyfollow/index', user.sortIndexViewFollowStory);
 
     // Save firebase cloud message token
     app.post('/v1/mobile/user/fcm/savefcmtoken', user.saveFCMToken);

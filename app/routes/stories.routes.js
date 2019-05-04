@@ -5,7 +5,7 @@ module.exports = (app) => {
     // app.post('/v1/mobile/stories/episodes/length', stories.getLengthEpisodesStory);
 
     // Lấy danh sách tập truyện trong một truyện theo key
-    app.post('/v1/mobile/stories/episodes', stories.findEpisodesStory);
+    app.get('/v1/mobile/stories/episodes', stories.findEpisodesStory);
 
     // // Lấy danh sách tập truyện có giới hạn trong một truyện theo key
     // app.post('/v1/mobile/stories/episodes', stories.findEpisodesStoryLimit);
@@ -14,7 +14,7 @@ module.exports = (app) => {
     // app.post('/v1/mobile/stories/episodes/reverse', stories.findReverseEpisodesStoryLimit);
 
     // Lấy thông tin của một tập trong một truyện theo key
-    app.post('/v1/mobile/stories/episodes/episodeskey', stories.findOneEpisodesStory);
+    app.get('/v1/mobile/stories/episodes/episodeskey', stories.findOneEpisodesStory);
 
     // Lấy thông tin của một bộ truyện theo key
     app.post('/v1/mobile/stories/storieskey', stories.findDetailStory);
