@@ -8,6 +8,8 @@ const request = require('request');
 // create express app
 var app = express();
 var cors = require('cors');
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 
 module.exports = app; // for testing
 
@@ -97,11 +99,12 @@ mongoose.connect(dbConfig.url, { useNewUrlParser: true })
     process.exit();
 });
 
+
 // define a simple route
 app.get('/', (req, res) => {
     res.json({"message": "Welcome to api story"});
 });
 
-app.listen(process.env.PORT || 4098, () => {
+server.listen(process.env.PORT || 4098, () => {
     console.log("Server is listening on port 4098");
 });
